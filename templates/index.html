@@ -1,0 +1,30 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora RPC</title>
+</head>
+<body>
+    <h1>Calculadora RPC</h1>
+    <form method="POST">
+        <input type="number" name="num1" placeholder="Número 1" required><br><br>
+        <input type="number" name="num2" placeholder="Número 2" required><br><br>
+
+        <label for="operation">Selecciona una operación:</label><br>
+        <select name="operation" required>
+            <option value="add">Suma</option>
+            <option value="subtract">Resta</option>
+            <option value="multiply">Multiplicación</option>
+            <option value="divide">División</option>
+        </select><br><br>
+
+        <input type="submit" value="Calcular">
+    </form>
+
+    {% if result is not none %}
+        <h2>Resultado: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
